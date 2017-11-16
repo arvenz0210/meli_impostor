@@ -38,10 +38,5 @@ class PublicationController {
 	}
 	
 	def purchase(){
-		def publication = Publication.get(params.id)
-		def user = User.get(session.user)
-		def purchase = new Purchase()
-		publication.addToPurchase(purchase)
-		user.addToPurchase(purchase)
 	}
 }

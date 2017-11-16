@@ -2,7 +2,8 @@ package fake_meli
 
 class Publication {
 
-	static hasMany = [purchases: Purchase]
+	static hasMany = [buyers: User]
+	static belongsTo = User
 	String title
 	String category
 	Double price

@@ -2,7 +2,7 @@ package fake_meli
 
 class User {
 	
-	static hasMany = [publications: Publication, purchases: Purchase]
+	static hasMany = [publications: Publication, purchases: Publication]
 	String username
 	String password
 	
