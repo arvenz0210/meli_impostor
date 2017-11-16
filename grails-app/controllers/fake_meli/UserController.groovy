@@ -42,12 +42,13 @@ class UserController {
 	def search(){
 		if (request.post){
 			String search = params.search
+			println params.search
 			def c = Publication.createCriteria()
 			def output = c.list{
 				 like ("title", "%" + search + "%")
 			}
 			println output
-			render(view: "resulta2", model: [message: output]) //render
+			render(view: "publicationList", model: [message: output]) //render
 		}
 	}
 }

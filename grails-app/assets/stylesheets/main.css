@@ -163,6 +163,23 @@ section {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around; }
+.productListBox {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  .productListBox:hover {
+    text-decoration: none;
+    color: #ee2144; }
+
+.productItemBox {
+  color: #222831;
+  padding: 20px;
+  border-radius: 4px;
+  background: #f1ebeb; }
+  .productItemBox:hover {
+    color: #f73859; }
+
 
 .card {
   margin: 20px auto; }

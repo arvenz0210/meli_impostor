@@ -1,6 +1,6 @@
 <head>
-		<meta name="layout" content="main"/>
-	</head>
+	<meta name="layout" content="main"/>
+</head>
 
 <section class="container">
     <div class="sectionHeader">

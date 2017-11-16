@@ -8,7 +8,7 @@ class PublicationController {
 			Double price = params.price as Double
 			String title = params.title
 			String category = params.category
-			int cantProducts = params.cantProducts
+			int cantProducts = params.cantProducts as Integer
 			boolean used = params.used
 			
 			
