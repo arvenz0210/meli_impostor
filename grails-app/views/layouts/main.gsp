@@ -37,12 +37,14 @@
 			      <ul class="CL_topMenu">
 				    	<li><a href="login.gsp">My purchases</a></li>
 				        <li><a href="register.gsp">Log out</a></li>
+				     	<li><a href="publication.gsp">publish</a></li>
 				      </ul>
       			</g:if>
       			
 				<g:else>
 					<ul class="CL_topMenu">
 			    	<li><a href="login.gsp">Sign in </a></li>
+			    	<li><a href="publication.gsp">publish</a></li>
 			        <li><a href="register.gsp">Sign up</a></li>
 			      </ul>
 			      
