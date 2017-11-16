@@ -4,7 +4,7 @@
 
 <section class="container">
     <div class="sectionHeader">
-      <h2>All products</h2>
+      <h2>Your search</h2>
     </div>
     <div class="productList">
 

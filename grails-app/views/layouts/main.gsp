@@ -7,19 +7,33 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
+		<title><g:layoutTitle default="fakeMeLi"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="application.css"/>
+		<!--link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon"-->
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+  		<asset:stylesheet src="main.css"/>
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+		<header class="container-fluid">
+			<nav>
+		    	<form action="rowList">
+		        <div class="rowItem dontMargin">
+		          <input type="text" class="rowValue searchInput" name="" value="">
+		          <button type="submit" class="btn btn-action" name="button">Buscar</button>
+		        </div>
+		      </form>
+		      	<ul class="CL_topMenu">
+		        	<li><a href="Sign_in.html">Sign in </a></li>
+		        	<li><a href="Sign_up.html">Sign up</a></li>
+		    	</ul>
+			</nav>
+	 	</header>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>
