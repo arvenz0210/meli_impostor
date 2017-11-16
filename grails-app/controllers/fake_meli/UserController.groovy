@@ -29,7 +29,7 @@ class UserController {
 			def user = query.findAll()
 					
 			if(user){
-				session.user = username
+				session.user = user.id
 				redirect(controller:"user", action:"home")
 			}else{
 				redirect(controller: "user", action:"login")
@@ -38,5 +38,16 @@ class UserController {
     }
 	def home(){
 		session.user ? [Ses: session.user] : redirect(controller: "user", action:"login")
+	}
+	def search(){
+		if (request.post){
+			String search = params.search
+			def c = Publication.createCriteria()
+			def output = c.list{
+				 like ("title", "%" + search + "%")
+			}
+			println output
+			render(view: "resulta2", model: [message: output]) //render
+		}
 	}
 }
