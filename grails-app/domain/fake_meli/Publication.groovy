@@ -2,13 +2,14 @@ package fake_meli
 
 class Publication {
 
+	static hasMany = [purchases: Purchase]
 	String title
 	String category
 	Double price
 	int cantProducts
 	boolean used
 	//hasmany preguntas
-	//Categoria categoia
+	//Categoria category
 	
 
 	
@@ -29,6 +30,5 @@ class Publication {
 		price blank: false //min: 0
 		cantProducts blank: false//, min: 0
 		used blank: false
-		
     }
 }

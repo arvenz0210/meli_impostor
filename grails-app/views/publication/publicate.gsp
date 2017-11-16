@@ -14,7 +14,7 @@
           <div class="rowName">
             <p>Titulo de la publicacion</p>
           </div>
-          <g:textField type="text" class="rowValue" name="titulo" value=""/>
+          <g:textField type="text" class="rowValue" name="title" value=""/>
           <div class="rowAggregate">
             <p>Ej: Fiat 500</p>
           </div>
@@ -24,24 +24,22 @@
           <div class="rowName">
             <p>Categoria</p>
           </div>
-            <g:textField type="text" class="rowValue" name="categoria" value=""/>
+            <g:textField type="text" class="rowValue" name="category" value=""/>
         </div>
 
         <div class="rowItem">
           <div class="rowName">
             <p>Precio</p>
           </div>
-          <input type="text" class="rowValue" name="Apellido" value="">
-          <div class="rowAggregate">
-            <g:textField type="text" class="rowValue" name="precio" value=""/>
-          </div>
+            <g:field type="number" class="rowValue" name="price" value=""/>
+   
         </div>
 
         <div class="rowItem">
           <div class="rowName">
             <p>Estado</p>
           </div>
-            <g:textField type="text" class="rowValue" name="usado" value=""/>
+            <g:textField type="text" class="rowValue" name="used" value=""/>
         </div>
 
         <div class="rowItem">

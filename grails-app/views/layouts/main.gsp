@@ -23,11 +23,11 @@
 	
 		<header class="container-fluid">
 			<nav>
-		    	<g:form action="search" class="rowList">
+		    	<g:form controller="user" action="search" class="rowList">
 			        <div class="rowItem dontMargin">
 			          <g:textField type="text" class="rowValue searchInput" name="search" value=""/>
 			        
-			          <g:actionSubmit action="search"  value="Buscar" class="btn btn-action"/>
+			          <g:actionSubmit controller="user" action="search"  value="Buscar" class="btn btn-action"/>
 			          
 			        </div>
 		      	</g:form>
@@ -37,14 +37,14 @@
 			      <ul class="CL_topMenu">
 				    	<li><a href="login.gsp">My purchases</a></li>
 				        <li><a href="register.gsp">Log out</a></li>
-				     	<li><a href="publication.gsp">publish</a></li>
+				     	<li><a href="../publication/publicate.gsp">publish</a></li>
 				      </ul>
       			</g:if>
       			
 				<g:else>
 					<ul class="CL_topMenu">
 			    	<li><a href="login.gsp">Sign in </a></li>
-			    	<li><a href="publication.gsp">publish</a></li>
+			    	<li><a href="../publication/publicate.gsp">publish</a></li>
 			        <li><a href="register.gsp">Sign up</a></li>
 			      </ul>
 			      

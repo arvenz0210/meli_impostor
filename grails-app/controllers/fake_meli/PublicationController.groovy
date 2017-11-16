@@ -3,24 +3,45 @@ package fake_meli
 class PublicationController {
 
 	def publicate(){
-		def user = User.get(session.user)
-		String title = params.title
-		String category = params.category
-		Double price = params.price
-		int cantProducts = params.cantProducts
-		boolean used = params.used
-		
-		def publication = new Publication(title, category, price , cantProducts, used)
-		if(publication.validate()){
-			user.addToPublications(publication)			
-			publication.save(flush: true)
-		}else{
-			publication.errors.allErrors.each {
-				println it
+		if (request.post){
+			def user = User.get(session.user)
+			Double price = params.price as Double
+			String title = params.title
+			String category = params.category
+			int cantProducts = params.cantProducts
+			boolean used = params.used
+			
+			
+			def publication = new Publication(title, category, price, cantProducts, used)
+			if(publication.validate()){
+				user.addToPublications(publication)			
+				publication.save(flush: true)
+			}else{
+				publication.errors.allErrors.each {
+					println it
+				}
 			}
+			def publicationList  = publication.list()
+			 
+			[Message: publicationList]
 		}
-		def publicationList  = publication.list()
-		 
-		[Message: publicationList]
+	}
+	
+	def publication(){
+		def publication = Publication.get(params.id)
+		if(publication){
+			println publication.title
+			[Message: publication]
+		}else{
+			redirect(controller:"user", action:"search")
+		}
+	}
+	
+	def purchase(){
+		def publication = Publication.get(params.id)
+		def user = User.get(session.user)
+		def purchase = new Purchase()
+		publication.addToPurchase(purchase)
+		user.addToPurchase(purchase)
 	}
 }
