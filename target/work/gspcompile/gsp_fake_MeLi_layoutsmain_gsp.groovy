@@ -41,18 +41,34 @@ invokeTag('captureHead','sitemesh',21,[:],1)
 printHtmlPart(4)
 createTagBody(1, {->
 printHtmlPart(5)
-invokeTag('layoutBody','g',37,[:],-1)
+createTagBody(2, {->
+printHtmlPart(6)
+invokeTag('textField','g',28,['type':("text"),'class':("rowValue searchInput"),'name':("search"),'value':("")],-1)
+printHtmlPart(7)
+invokeTag('actionSubmit','g',30,['action':("search"),'value':("Buscar"),'class':("btn btn-action")],-1)
+printHtmlPart(8)
+})
+invokeTag('form','g',33,['action':("search"),'class':("rowList")],2)
+printHtmlPart(9)
+if(true && (true)) {
+printHtmlPart(10)
+}
+else {
+printHtmlPart(11)
+}
+printHtmlPart(12)
+invokeTag('layoutBody','g',60,[:],-1)
 printHtmlPart(4)
 })
-invokeTag('captureBody','sitemesh',38,[:],1)
-printHtmlPart(6)
+invokeTag('captureBody','sitemesh',61,[:],1)
+printHtmlPart(13)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1510841375000L
+public static final long LAST_MODIFIED = 1510842342357L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

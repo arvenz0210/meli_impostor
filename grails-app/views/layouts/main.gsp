@@ -20,20 +20,43 @@
 		<g:layoutHead/>
 	</head>
 	<body>
+	
 		<header class="container-fluid">
 			<nav>
-		    	<form action="rowList">
-		        <div class="rowItem dontMargin">
-		          <input type="text" class="rowValue searchInput" name="" value="">
-		          <button type="submit" class="btn btn-action" name="button">Buscar</button>
-		        </div>
-		      </form>
-		      	<ul class="CL_topMenu">
-		        	<li><a href="Sign_in.html">Sign in </a></li>
-		        	<li><a href="Sign_up.html">Sign up</a></li>
-		    	</ul>
-			</nav>
-	 	</header>
+		    	<g:form action="search" class="rowList">
+			        <div class="rowItem dontMargin">
+			          <g:textField type="text" class="rowValue searchInput" name="search" value=""/>
+			        
+			          <g:actionSubmit action="search"  value="Buscar" class="btn btn-action"/>
+			          
+			        </div>
+		      	</g:form>
+			  <a href="home.gsp">Fake MeLi</a>
+			  	<g:if test="${false}">
+      			  
+			      <ul class="CL_topMenu">
+				    	<li><a href="login.gsp">My purchases</a></li>
+				        <li><a href="register.gsp">Log out</a></li>
+				      </ul>
+      			</g:if>
+      			
+				<g:else>
+					<ul class="CL_topMenu">
+			    	<li><a href="login.gsp">Sign in </a></li>
+			        <li><a href="register.gsp">Sign up</a></li>
+			      </ul>
+			      
+				</g:else>
+			  	    	
+				</nav>
+		 	</header>
+		 	
+		 	
+	
+		
+
+
+		
 		<g:layoutBody/>
 	</body>
 </html>
