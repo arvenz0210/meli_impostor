@@ -31,21 +31,21 @@
 			          
 			        </div>
 		      	</g:form>
-			  <a href="home.gsp">Fake MeLi</a>
-			  	<g:if test="${false}">
+			  <g:link controller="User" action="home">Fake MeLi</g:link>
+			  	<g:if test="${session}">
       			  
 			      <ul class="CL_topMenu">
-				    	<li><a href="login.gsp">My purchases</a></li>
-				        <li><a href="register.gsp">Log out</a></li>
-				     	<li><a href="../publication/publicate.gsp">publish</a></li>
+				    	<li><g:link controller="User" action="home">My purchases</g:link></li>
+				        <li><g:link controller="User" action="resgister">Log out</g:link></li>
+				     	<li><g:link controller="Publication" action="publicate">publish</g:link></li>
 				      </ul>
       			</g:if>
       			
 				<g:else>
 					<ul class="CL_topMenu">
-			    	<li><a href="login.gsp">Sign in </a></li>
-			    	<li><a href="../publication/publicate.gsp">publish</a></li>
-			        <li><a href="register.gsp">Sign up</a></li>
+			    	<li><g:link controller="User" action="login">Sign in </g:link></li>
+			    	<li><g:link controller="Publication" action="publicate">publish</g:link></li>
+			        <li><g:link controller="User" action="register">Sign up</g:link></li>
 			      </ul>
 			      
 				</g:else>
