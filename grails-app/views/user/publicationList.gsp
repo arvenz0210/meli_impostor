@@ -36,15 +36,15 @@
             </div>
 			<div class="productList">
             <g:each in="${message}" var="publication">
-            
-            <a href="#" class="">
-                <div class="productItemBox">
-                  <h3>${publication.title}</h3>
-                  <span>$${publication.price}</span>
-                  <span>${publication.used}</span>
-                </div>
-              </a>
-				</g:each>	
+        
+	            <g:link action="publication" id="${publication.id}">
+	            	<div class="productItemBox">
+	            		<h3>${publication.title}</h3>
+	                    <span>$${publication.price}</span>
+	                    <span>${publication.used}</span>
+	                </div>
+	             </g:link>
+			</g:each>	
 			</div>
           </section>
         </div>
