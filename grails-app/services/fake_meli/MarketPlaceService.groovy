@@ -10,6 +10,7 @@ class MarketPlaceService {
 		if(publication){
 			if (publication.getCantProducts()){
 				def purchase = new Purchases(user, publication)
+				publication.cantProducts -= 1
 				purchase.save()
 				succes = true
 				

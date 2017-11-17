@@ -12,13 +12,18 @@ class PublicationController {
 			String title = params.title
 			String category = params.category
 			int cantProducts = params.cantProducts as Integer
-			boolean used = params.used
-			
+			int used = params.used as Integer
+			println used
+			/*if(params.used == 0){
+				used = false
+			}else{
+				used = true
+			}*/
 			
 			def publication = new Publication(title, category, price, cantProducts, used)
 			if(publication.validate()){
 				user.addToPublications(publication)			
-				publication.save(flush: true)
+				publication.save()
 			}else{
 				publication.errors.allErrors.each {
 					println it
@@ -47,7 +52,6 @@ class PublicationController {
 		if (publication){
 			if (publication.getCantProducts()){
 				succes = marketPlaceService.purchase(user, publication)
-				publication.cantProducts -= 1
 			}
 		}
 		[soldStatus: succes]

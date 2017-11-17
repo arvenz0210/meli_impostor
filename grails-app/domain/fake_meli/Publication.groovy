@@ -8,6 +8,7 @@ class Publication {
 	String category
 	Double price
 	int cantProducts
+	int used
 	
 	
 	public int getCantProducts() {
@@ -20,14 +21,13 @@ class Publication {
 
 
 
-	boolean used
 	//hasmany preguntas
 	//Categoria category
 	
 
 	
 	public Publication(String title, String category, Double price, int cantProducts,
-			boolean used) {
+			int used) {
 		super();
 		this.title = title;
 		this.category = category

@@ -3,17 +3,17 @@ package fake_meli
 class UserController {
 	
 	def register(){
-	 def user = new User("Arvenz", "0210")
-	 if(user.validate()){
-		 user.save()
-	 }else{
-		 user.errors.allErrors.each {
-			 println it
-		 }
-	 }
-	 def userList  = User.list()
-	  
-	 [userList: userList]
+		def user = new User("Arvenz", "0210")
+		if(user.validate()){
+			user.save()
+		}else{
+			user.errors.allErrors.each {
+				println it
+			}
+		}
+		def userList  = User.list()
+		 
+		[userList: userList]
 	}
 	
     def login() {
@@ -30,24 +30,40 @@ class UserController {
 					
 			if(user){
 				session.user = user.id
-				redirect(controller:"user", action:"home")
+				
+				render (view : "home", model: [Ses: session.user])
 			}else{
 				redirect(controller: "user", action:"login")
 			}
 		}
     }
 	def home(){
-		session.user ? [Ses: session.user] : redirect(controller: "user", action:"login")
+		def publicationList  = publication.list()
+		session.user ? [ Ses: session.user, publicationList: publicationList ] : redirect(controller: "user", action:"login")
 	}
 	def search(){
 		if (request.post){
 			String search = params.search
-			println params.search
 			def c = Publication.createCriteria()
 			def searchResult = c.list{
 				 like ("title", "%" + search + "%")
 			}
-			render(view: "publicationList", model: [searchResult: searchResult]) //render
+			render(view: "publicationList", model: [searchResult: searchResult, searchActual: search]) //render
 		}
+	}
+	def searchNew(){
+		if (request.post){
+			String search = params.search
+			int used= params.used as Integer
+			def c = Publication.createCriteria()
+			def searchResult = c.list{
+				 like ("title", "%" + search + "%")
+				 eq ("used", used)
+			}
+			
+			render(view: "publicationList", model: [searchResult: searchResult, searchActual: search]) //render
+			
+		}
+	
 	}
 }
