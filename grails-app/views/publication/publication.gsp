@@ -9,14 +9,14 @@
 
           <div class="col-sm-6">
             <section>
-              <img src="img/product_img_not_found.png" alt="">
+              <img src="${createLinkTo(dir: 'images', file: 'grails_logo.png')}" />
             </section>
           </div>
 
           <div class="col-sm-6">
             <section>
               <div class="sectionHeader">
-                <h2>Publication title</h2>
+                <h2>Title</h2>
               </div>
               <div class="rowList">
                 <div class="rowItem">
@@ -45,13 +45,22 @@
                     <p>Autos</p>
                   </div>
                 </div>
-
               </div>
             </section>
           </div>
 
 
         </div>
+      
+      	<div class="row">
+      		<div class="col-sm-12 col-centered sectionsContainer">
+      		<section>
+            	<div class="sectionHeader">
+            		<h2>Comentarios</h2>
+            	</div>
+            </section>
+      		</div>
+      	</div>
       </div>
     </div>
 

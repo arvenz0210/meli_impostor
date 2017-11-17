@@ -36,14 +36,14 @@
             </div>
 			<div class="productList">
             <g:each in="${message}" var="publication">
-        
-	            <g:link action="publication" id="${publication.id}">
+				<g:set var="url" value="/publications/${publication.id}"/>
+	            <a href="${createLink(uri: url)}"">
 	            	<div class="productItemBox">
 	            		<h3>${publication.title}</h3>
 	                    <span>$${publication.price}</span>
 	                    <span>${publication.used}</span>
 	                </div>
-	             </g:link>
+	             </a>
 			</g:each>	
 			</div>
           </section>
