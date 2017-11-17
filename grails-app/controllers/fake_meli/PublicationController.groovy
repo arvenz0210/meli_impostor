@@ -38,5 +38,18 @@ class PublicationController {
 	}
 	
 	def purchase(){
+		def user = User.get(session.user)
+		def publication = Publication.get(params.id)
+		if(publication){
+			if (publication.getCantProducts()){
+				publication.setCantProducts()
+				user.addToPurchases(publication).save()
+				publication.save()
+			} else {
+				redirect(controller:"user", action:"search")
+			}
+		} else {
+			redirect(controller:"user", action:"search")
+		}
 	}
 }

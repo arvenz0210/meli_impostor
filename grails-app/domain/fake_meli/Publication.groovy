@@ -8,6 +8,18 @@ class Publication {
 	String category
 	Double price
 	int cantProducts
+	
+	
+	public int getCantProducts() {
+		return cantProducts;
+	}
+
+	public void setCantProducts(int cantProducts) {
+		this.cantProducts -= 1;
+	}
+
+
+
 	boolean used
 	//hasmany preguntas
 	//Categoria category
