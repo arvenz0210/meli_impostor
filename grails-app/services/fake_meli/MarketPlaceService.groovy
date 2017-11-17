@@ -12,6 +12,7 @@ class MarketPlaceService {
 				def purchase = new Purchases(user, publication)
 				purchase.save()
 				succes = true
+				
 			} 
 		}
 		return succes

@@ -13,7 +13,7 @@ class UserController {
 	 }
 	 def userList  = User.list()
 	  
-	 [Message: userList]
+	 [userList: userList]
 	}
 	
     def login() {
@@ -44,11 +44,10 @@ class UserController {
 			String search = params.search
 			println params.search
 			def c = Publication.createCriteria()
-			def output = c.list{
+			def searchResult = c.list{
 				 like ("title", "%" + search + "%")
 			}
-			println output
-			render(view: "publicationList", model: [message: output]) //render
+			render(view: "publicationList", model: [searchResult: searchResult]) //render
 		}
 	}
 }

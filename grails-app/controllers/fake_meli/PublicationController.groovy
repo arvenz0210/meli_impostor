@@ -26,7 +26,7 @@ class PublicationController {
 			}
 			def publicationList  = publication.list()
 			 
-			[Message: publicationList]
+			[publicationList: publicationList]
 		}
 	}
 	
@@ -34,7 +34,7 @@ class PublicationController {
 		def publication = Publication.get(params.id)
 		if(publication){
 			println publication.title
-			[Message: publication]
+			[publication: publication]
 		}else{
 			redirect(controller:"user", action:"search")
 		}
@@ -50,11 +50,7 @@ class PublicationController {
 				publication.cantProducts -= 1
 			}
 		}
-		if (succes){
-			render "asdf"
-		}else {
-			render "error"
-		}
+		[soldStatus: succes]
 		
 	}
 	
