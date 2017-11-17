@@ -38,7 +38,7 @@ class UserController {
 		}
     }
 	def home(){
-		def publicationList  = publication.list()
+		def publicationList  = Publication.list()
 		session.user ? [ Ses: session.user, publicationList: publicationList ] : redirect(controller: "user", action:"login")
 	}
 	def search(){
