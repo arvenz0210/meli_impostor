@@ -51,7 +51,6 @@ class PublicationController {
 			}
 		}
 		[soldStatus: succes]
-		
 	}
 	
 }

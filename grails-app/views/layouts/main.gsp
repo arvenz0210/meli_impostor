@@ -36,7 +36,7 @@
       			  
 			      <ul class="CL_topMenu">
 				    	<li><g:link controller="User" action="home">My purchases</g:link></li>
-				        <li><g:link controller="User" action="resgister">Log out</g:link></li>
+				        
 				     	<li><g:link controller="Publication" action="publicate">publish</g:link></li>
 				      </ul>
       			</g:if>
@@ -55,7 +55,6 @@
 		 	
 		 	
 	
-		
 
 
 		

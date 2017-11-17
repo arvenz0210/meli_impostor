@@ -35,7 +35,7 @@
               <h2>Resultados</h2>
             </div>
 			<div class="productList">
-            <g:each in="${message}" var="publication">
+            <g:each in="${searchResult}" var="publication">
 				<g:set var="url" value="/publications/${publication.id}"/>
 	            <a href="${createLink(uri: url)}"">
 	            	<div class="productItemBox">

@@ -16,36 +16,52 @@
           <div class="col-sm-6">
             <section>
               <div class="sectionHeader">
-                <h2>Title</h2>
+                <h2>${publication.title}</h2>
               </div>
               <div class="rowList">
                 <div class="rowItem">
                   <div class="rowName">
                     <p>Price</p>
                   </div>
-                  <p class="rowValue onlyShow">$3300</p>
+                  <p class="rowValue onlyShow">$${publication.price}</p>
                 </div>
 
                 <div class="rowItem">
                   <div class="rowName">
                     <p>Stock</p>
                   </div>
-                  <p class="rowValue onlyShow">$3300</p>
+                  <p class="rowValue onlyShow">${publication.cantProducts}</p>
                 </div>
 
 
                 <div class="rowItem">
                   <div class="rowName">
-                    <p>Used</p>
+                    <g:if test="${publication.id}">
+                    	<p>Used</p>
+                    </g:if>
+					<g:else>
+						<p>New</p>
+					</g:else>
                   </div>
                 </div>
 
                 <div class="rowItem">
                   <div class="rowName">
-                    <p>Autos</p>
+                    <p>${publication.category}</p>
                   </div>
                 </div>
-              </div>
+                
+                <div class="rowItem">
+                  <div class="rowName">
+                    <g:set var="url" value="/purchase/${publication.id}"/>
+	           		<a href="${createLink(uri: url)}">
+	           			¡to buy!
+					</a>
+                  </div>
+                </div>
+                
+                
+               </div>
             </section>
           </div>
 
@@ -56,7 +72,7 @@
       		<div class="col-sm-12 col-centered sectionsContainer">
       		<section>
             	<div class="sectionHeader">
-            		<h2>Comentarios</h2>
+            		<h2>Preguntas</h2>
             	</div>
             </section>
       		</div>
