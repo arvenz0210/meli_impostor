@@ -2,6 +2,9 @@ package fake_meli
 
 class PublicationController {
 
+	MarketPlaceService marketPlaceService
+	
+	
 	def publicate(){
 		if (request.post){
 			def user = User.get(session.user)
@@ -38,18 +41,21 @@ class PublicationController {
 	}
 	
 	def purchase(){
+		boolean succes = false
 		def user = User.get(session.user)
 		def publication = Publication.get(params.id)
-		if(publication){
+		if (publication){
 			if (publication.getCantProducts()){
-				publication.setCantProducts()
-				user.addToPurchases(publication).save()
-				publication.save()
-			} else {
-				redirect(controller:"user", action:"search")
+				succes = marketPlaceService.purchase(user, publication)
+				publication.cantProducts -= 1
 			}
-		} else {
-			redirect(controller:"user", action:"search")
 		}
+		if (succes){
+			render "asdf"
+		}else {
+			render "error"
+		}
+		
 	}
+	
 }

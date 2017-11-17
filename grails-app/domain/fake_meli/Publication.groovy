@@ -2,7 +2,7 @@ package fake_meli
 
 class Publication {
 
-	static hasMany = [buyers: User]
+	static hasMany = [purchases: Purchases]
 	static belongsTo = User
 	String title
 	String category
@@ -14,7 +14,7 @@ class Publication {
 		return cantProducts;
 	}
 
-	public void setCantProducts(int cantProducts) {
+	public void setCantProducts() {
 		this.cantProducts -= 1;
 	}
 
