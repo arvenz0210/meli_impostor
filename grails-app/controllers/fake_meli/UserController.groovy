@@ -11,6 +11,14 @@ class UserController {
 				println it
 			}
 		}
+		def user2 = new User("Saenz", "0210")
+		if(user2.validate()){
+			user2.save()
+		}else{
+			user2.errors.allErrors.each {
+				println it
+			}
+		}
 		def userList  = User.list()
 		 
 		[userList: userList]
@@ -62,8 +70,13 @@ class UserController {
 			}
 			
 			render(view: "publicationList", model: [searchResult: searchResult, searchActual: search]) //render
-			
 		}
+	}
 	
+	def myPurchases(){
+		def user = User.get(session.user)
+		def purchasesResult = user.purchases
+		[purchasesResult: purchasesResult]
+		
 	}
 }
