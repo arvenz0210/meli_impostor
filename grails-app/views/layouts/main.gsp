@@ -32,10 +32,10 @@
 			        </div>
 		      	</g:form>
 			  <g:link controller="User" action="home">Fake MeLi</g:link>
-			  	<g:if test="${session}">
+			  	<g:if test="true">
       			  
 			      <ul class="CL_topMenu">
-				    	<li><g:link controller="User" action="home">My purchases</g:link></li>
+				    	<!--li><g:link controller="User" action="home">My purchases</g:link></li-->
 				        
 				     	<li><g:link controller="Publication" action="publicate">publish</g:link></li>
 				      </ul>
@@ -44,8 +44,8 @@
 				<g:else>
 					<ul class="CL_topMenu">
 			    	<li><g:link controller="User" action="login">Sign in </g:link></li>
-			    	<li><g:link controller="Publication" action="publicate">publish</g:link></li>
 			        <li><g:link controller="User" action="register">Sign up</g:link></li>
+			    	<li><g:link controller="Publication" action="publicate">publish</g:link></li>
 			      </ul>
 			      
 				</g:else>

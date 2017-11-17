@@ -55,7 +55,7 @@
                   <div class="rowName">
                     <g:set var="url" value="/purchase/${publication.id}"/>
 	           		<a href="${createLink(uri: url)}">
-	           			¡to buy!
+	           			¡buy!
 					</a>
                   </div>
                 </div>
