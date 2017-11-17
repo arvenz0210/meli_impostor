@@ -8,8 +8,8 @@
         <div class="row">
 
           <div class="col-sm-6">
-            <section>
-              <img src="${createLinkTo(dir: 'images', file: 'grails_logo.png')}" />
+            <section class="sectionMaxHeight sectionImg">
+              <img src="${createLinkTo(dir: 'images', file: 'product_img_not_found.png')}" />
             </section>
           </div>
 

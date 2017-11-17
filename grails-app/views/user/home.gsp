@@ -7,7 +7,6 @@
       <h2>All products</h2>
     </div>
     <div class="productList">
-
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="img/product_img_not_found.png" alt="Card image cap">
         <div class="card-block">

@@ -51,7 +51,9 @@ header {
             header nav > ul li > ul > li:hover {
               transition: all ease 0.5s;
               background: #ee2144; }
-
+.sectionImg img{
+	width: 100%;
+}
 .btn {
   font-family: 'Roboto', sans-serif;
   margin-left: 5px;
